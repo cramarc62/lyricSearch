@@ -30,7 +30,7 @@ export const GlobalProvider = ({children}) => {
         
             const fetchSearch=async()=>{
             console.log("in search track")
-            const res1=await axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_track=${title}&page_size=100&s_track_rating=desc&apikey=5f61ed79a312715df7f981f3d2f04a1a`);
+            const res1=await axios.get(`https://arcane-citadel-37076.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_track=${title}&page_size=100&s_track_rating=desc&apikey=5f61ed79a312715df7f981f3d2f04a1a`);
             console.log(res1.data)
             dispatch({
                 type:"search_track",
@@ -47,7 +47,7 @@ export const GlobalProvider = ({children}) => {
     useEffect(()=>{
         console.log("in useeffect")
         const fetchLyrics=async()=>{
-        const res=await axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page_size=100&country=us&f_has_lyrics=1&apikey=5f61ed79a312715df7f981f3d2f04a1a`);
+        const res=await axios.get(`https://arcane-citadel-37076.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page_size=100&country=us&f_has_lyrics=1&apikey=5f61ed79a312715df7f981f3d2f04a1a`);
         loadData(res.data.message.body.track_list);
         };
         //console.log(res.data)
