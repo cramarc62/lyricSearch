@@ -9,11 +9,11 @@ export const Lyrics = (props) => {
 
     useEffect(()=>{
         const fetchSingleLyric=async ()=>{
-            const res1= await axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${props.match.params.id}&apikey=5f61ed79a312715df7f981f3d2f04a1a`);
+            const res1= await axios.get(`https://serene-sierra-43944.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${props.match.params.id}&apikey=5f61ed79a312715df7f981f3d2f04a1a`);
             //console.log(res1.data);
             setLyric(res1.data.message.body.lyrics)
            // const res2
-           const res2= await axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?track_id=${props.match.params.id}&apikey=5f61ed79a312715df7f981f3d2f04a1a`);
+           const res2= await axios.get(`https://serene-sierra-43944.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.get?track_id=${props.match.params.id}&apikey=5f61ed79a312715df7f981f3d2f04a1a`);
            console.log(res2.data); 
            setTrack(res2.data.message.body.track)
         }
